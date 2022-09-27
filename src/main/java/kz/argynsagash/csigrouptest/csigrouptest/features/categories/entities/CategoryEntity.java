@@ -9,7 +9,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Setter
 @Getter
@@ -26,4 +28,11 @@ public class CategoryEntity {
     @OneToMany(mappedBy = "categoryEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetailEntity> detailEntities = new ArrayList<>();
 
+    @Override
+    public String toString() {
+
+        return "Detail " + title+
+                " total price " + price +
+                " includes: \n" + detailEntities;
+    }
 }

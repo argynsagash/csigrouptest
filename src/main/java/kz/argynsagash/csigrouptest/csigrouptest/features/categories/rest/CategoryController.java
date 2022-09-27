@@ -3,7 +3,6 @@ package kz.argynsagash.csigrouptest.csigrouptest.features.categories.rest;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import kz.argynsagash.csigrouptest.csigrouptest.features.categories.entities.CategoryEntity;
 import kz.argynsagash.csigrouptest.csigrouptest.features.categories.service.CategoryService;
-import kz.argynsagash.csigrouptest.csigrouptest.features.details.entities.DetailEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +25,11 @@ public class CategoryController {
     @GetMapping
     public List<CategoryEntity> getAll() {
         return categoryService.getAll();
+    }
+
+    @GetMapping("{id}")
+    public String getById(@PathVariable Long id) {
+        return categoryService.getById(id).toString();
     }
 
     @PutMapping("/update")

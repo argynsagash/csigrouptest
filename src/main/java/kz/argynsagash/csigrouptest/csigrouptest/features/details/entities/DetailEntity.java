@@ -21,4 +21,9 @@ public class DetailEntity {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     private CategoryEntity categoryEntity;
+
+    @Override
+    public String toString() {
+        return title + " price: " + price;
+    }
 }

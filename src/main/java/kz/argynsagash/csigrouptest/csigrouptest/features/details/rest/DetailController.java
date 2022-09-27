@@ -38,7 +38,7 @@ public class DetailController {
         detailService.remove(detailId);
     }
 
-    @GetMapping("/byCategory/{categoryId}")
+    @GetMapping("/byCategory/{id}")
     public List<DetailEntity> getAllByCategory(@PathVariable Long categoryId){
         return detailService.getDetailsByCategory(categoryId);
     }
