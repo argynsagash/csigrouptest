@@ -4,7 +4,6 @@ import kz.argynsagash.csigrouptest.csigrouptest.features.categories.entities.Cat
 import kz.argynsagash.csigrouptest.csigrouptest.features.categories.error.CategoryNotFoundFailure;
 import kz.argynsagash.csigrouptest.csigrouptest.features.categories.repo.CategoryRepo;
 import kz.argynsagash.csigrouptest.csigrouptest.features.categories.service.CategoryService;
-import kz.argynsagash.csigrouptest.csigrouptest.features.details.entities.DetailEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -42,10 +41,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     }
 
-    @Override
-    public List<DetailEntity> getAllDetails(Long id) {
-        CategoryEntity category = categoryRepo.findById(id).orElseThrow(CategoryNotFoundFailure::new);
-        return category.getDetailEntities();
-    }
+
 
 }

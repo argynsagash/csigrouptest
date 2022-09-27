@@ -9,5 +9,6 @@ public interface DetailService {
     List<DetailEntity> getAll();
     void update(Long id, String title, Double price);
     void remove(Long id);
+    List<DetailEntity> getDetailsByCategory(Long categoryId);
 
 }

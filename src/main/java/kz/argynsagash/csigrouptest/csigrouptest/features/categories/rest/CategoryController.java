@@ -39,9 +39,5 @@ public class CategoryController {
         categoryService.remove(categoryId);
     }
 
-    @GetMapping("/getDetails/{categoryId}")
-    public List<DetailEntity> getDetails(@PathVariable Long categoryId){
-        return categoryService.getAllDetails(categoryId);
-    }
-    
+
 }

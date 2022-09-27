@@ -46,7 +46,15 @@ public class DetailServiceImpl implements DetailService {
 
     @Override
     public void remove(Long id) {
+        DetailEntity detail = detailRepo.findById(id).orElseThrow(DetailNotFoundFailure::new);
+        CategoryEntity categoryEntity = detail.getCategoryEntity();
+        categoryEntity.setPrice(categoryEntity.getPrice() - detail.getPrice());
         detailRepo.deleteById(id);
     }
 
+    @Override
+    public List<DetailEntity> getDetailsByCategory(Long categoryId) {
+        CategoryEntity category = categoryRepo.findById(categoryId).orElseThrow(CategoryNotFoundFailure::new);
+        return category.getDetailEntities();
+    }
 }

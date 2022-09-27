@@ -37,4 +37,9 @@ public class DetailController {
     public void delete(@PathVariable Long detailId) {
         detailService.remove(detailId);
     }
+
+    @GetMapping("/byCategory/{categoryId}")
+    public List<DetailEntity> getAllByCategory(@PathVariable Long categoryId){
+        return detailService.getDetailsByCategory(categoryId);
+    }
 }

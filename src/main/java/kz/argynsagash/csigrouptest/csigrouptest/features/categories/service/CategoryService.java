@@ -10,6 +10,5 @@ public interface CategoryService {
     List<CategoryEntity> getAll();
     void update(Long id, String title);
     void remove(Long id);
-    List<DetailEntity> getAllDetails(Long id);
 
 }
